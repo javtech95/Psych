@@ -1,18 +1,17 @@
-// Variables for Score and Array of alphabet to be used by computer.
+// Variables for Score
 var userWins = 0;
 var userLosses = 0;
 var userGuessLeft = 9;
-//Global variable used for displaying the user guesses in browser;
+
 var guess = '';
 var compChoice = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-//Global variable set for computer guess to be constant throughout 9 guesses;
+
 var compGuess = '';
 var guessedLetters;
 guessedLetters = [];
 
-// Function that allows user to utilize keyboard;
 document.onkeyup = function (event) {
-    //Variable used to identify keys being pushed as User's Guess;
+
     var userGuess = event.key;
 
 
@@ -68,7 +67,7 @@ document.onkeyup = function (event) {
         reset();
 
     }
-}
+};
 
 function reset() {
     guessesLeft = 9;
