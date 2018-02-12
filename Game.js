@@ -17,17 +17,31 @@ document.onkeyup = function (event) {
 
     //check to see if the user has already selected a letter that is already guessed.
     console.log(guessedLetters, userGuess);
-    if (guessedLetters.indexOf(userGuess) === 1) {
+
+    if (guessedLetters.indexOf(userGuess) > -1) {
         // noinspection JSAnnotator
-        alert(`you already guessed ${userGuess}`);
-        return;
+        console.log('test');
+        alert('you already guessed ' + userGuess);
+    }
+    else {
+        guessedLetters.push(userGuess);
+        validate(userGuess);
 
     }
 
+
+
+
     //push the user Guess into an array.  We have to do this after we check to see if a letter is an array because if the code is before the logic check,
     //then the letter exists in the array and the if evaulates to true every time.
-    guessedLetters.push(userGuess);
+   //guessedLetters.push(userGuess);
 
+
+
+};
+
+
+function validate(userGuess) {
 
     // Statement set to choose a random letter every time the amount of guesses left = 9;
     if (userGuessLeft === 9) {
@@ -67,7 +81,7 @@ document.onkeyup = function (event) {
         reset();
 
     }
-};
+}
 
 function reset() {
     guessesLeft = 9;
